@@ -5,6 +5,9 @@ def show_menu():
     print("3. Jus          Rp15.000")
     print("4. Air Mineral  Rp5.000")
 
+    def calculate_total_price(quantity, price):
+    return quantity * price
+
 def order_drink():
     show_menu()
     choice = int(input("Pilihan Anda: "))
@@ -24,3 +27,20 @@ def order_drink():
     else:
         print("Maaf, pilihan tidak tersedia.")
         return
+    
+    total_price = calculate_total_price(quantity, price)
+    print(f"Anda memesan {quantity} {drink}. Total harga: Rp{total_price}")
+    
+    while True:
+    print("Selamat datang di Kafe XYZ!")
+    print("Silakan pilih:")
+    print("1. Pesan minuman")
+    print("2. Keluar")
+    choice = int(input("Pilihan Anda: "))
+    if choice == 1:
+        order_drink()
+    elif choice == 2:
+        print("Terima kasih telah berkunjung!")
+        break
+    else:
+        print("Maaf, pilihan tidak tersedia.")
